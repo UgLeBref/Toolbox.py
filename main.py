@@ -5,7 +5,7 @@ os.system("clear")
 # Afficher le menu
 print("Menu :")
 print("1. Collecte d'information.")
-print("2. Scan des vulérabilités.")
+print("2. Scan des vulnérabilités.")
 print("3. ")
 print("4. ")
 print("5 . Arreter le programme.")
@@ -15,7 +15,7 @@ if choix == "1":
     os.system("python3 Info.py")
 
 if choix == "2":
-    ip_add = input("Saisir l'adresse ip du réseau : ")
+    ip_add = input("Saisir l'adresse ip cible : ")
     os.system(f"nmap -sV --script=vulscan/ {ip_add}")
 
 elif choix == "5":
