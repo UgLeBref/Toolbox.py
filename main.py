@@ -12,20 +12,20 @@ print("4. ")
 print("0 . Arreter le programme.")
 choix = input("Saisir l'option : ")
 
-if choix == "1":
-    os.system("python3 Info.py")
-
-if choix == "2":
-    os.system("python Vuln.py")
-
-if choix == "3":
-    os.system("python Dorks.py")
-
-elif choix == "0":
-    print("Fin du programme.")
-    sys.exit()
+if choix == "0":
+    sys.exit("Fin du programme.")
 
 else:
-    os.system("python main.py")
+    if choix == "1":
+        os.system("python3 Info.py")
 
-input("Continuer")
+    if choix == "2":
+        os.system("python Vuln.py")
+
+    if choix == "3":
+        os.system("python Dorks.py")
+
+    else:
+        os.system("python main.py")
+
+    input("Continuer")
