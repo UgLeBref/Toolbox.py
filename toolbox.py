@@ -160,6 +160,15 @@ def dorks():
         input("Continuer")
 
 
+def dnscan():
+    while True:
+        os.system("clear")
+        print("(Saisir 0 pour revenir au menu.)")
+        menu = input("Quel domaine scanner : ")
+        os.system(f"python dnscan/dnscan.py -d {menu}")
+        input("Continuer")
+
+
 while True:
     os.system("clear")
     os.system("figlet -f larry3d Toolbox")
@@ -169,6 +178,7 @@ while True:
     print("1. Collecte d'information.")
     print("2. Scan des vulnérabilités.")
     print("3. Google Dorks")
+    print("4. Scan DNS")
     print("0. Arreter le programme.")
     choix = input("Saisir l'option : ")
 
@@ -184,3 +194,6 @@ while True:
 
     elif choix == "3":
         dorks()
+
+    elif choix == "4":
+        dnscan()
