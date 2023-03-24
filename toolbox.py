@@ -1,10 +1,10 @@
-import os, sys
+import os
 
 
 def info():
     while True:
         os.system("clear")
-        os.system("figlet -f larry3d Info")
+        os.system("figlet -f larry3d -w 120 Informations")
 
         print("Menu :")
         print("1. Détection des hôtes.")
@@ -42,7 +42,7 @@ def info():
 def vuln():
     while True:
         os.system("clear")
-        os.system("figlet -f larry3d Databases")
+        os.system("figlet -f larry3d -w 120 Vulerabilites")
 
         print("Menu :")
         print("1. Scipvul db.")
@@ -100,7 +100,7 @@ def vuln():
 def dorks():
     while True:
         os.system("clear")
-        os.system("figlet -f larry3d Pagodo")
+        os.system("figlet -f larry3d -w 120 Google Dorks")
 
         print("Menu :")
         print("1. Tous les Google Dorks disponibles.")
@@ -118,65 +118,69 @@ def dorks():
         if menu == '0':
             break
 
-        cible = input("Quel est le domaine cible : ")
-
-        if menu == '1':
-            os.system("clear")
-            os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/all_google_dorks.txt")
-
-        elif menu == '2':
-            os.system("clear")
-            os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/files_containing_passwords.dorks")
-
-        elif menu == '3':
-            os.system("clear")
-            os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/files_containing_usernames.dorks")
-
-        elif menu == '4':
-            os.system("clear")
-            os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/sensitive_online_shopping_info.dorks")
-
-        elif menu == '5':
-            os.system("clear")
-            os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/pages_containing_login_portals.dorks")
-
-        elif menu == '6':
-            os.system("clear")
-            os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/vulnerable_files.dorks")
-
-        elif menu == '7':
-            os.system("clear")
-            os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/vulnerable_servers.dorks")
-
         elif menu == '8':
             os.system("clear")
-            os.system("python pagodo/ghdb_scrapper.py -s -j -i")
+            os.system("python pagodo/ghdb_scraper.py -s -j -i")
+            print("Les Fichier sont à jour.")
 
         else:
-            print("\n Erreur : la saisie est incorrecte.")
+            cible = input("Quel est le domaine cible : ")
+
+            if menu == '1':
+                os.system("clear")
+                os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/all_google_dorks.txt")
+
+            elif menu == '2':
+                os.system("clear")
+                os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/files_containing_passwords.dorks")
+
+            elif menu == '3':
+                os.system("clear")
+                os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/files_containing_usernames.dorks")
+
+            elif menu == '4':
+                os.system("clear")
+                os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/sensitive_online_shopping_info.dorks")
+
+            elif menu == '5':
+                os.system("clear")
+                os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/pages_containing_login_portals.dorks")
+
+            elif menu == '6':
+                os.system("clear")
+                os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/vulnerable_files.dorks")
+
+            elif menu == '7':
+                os.system("clear")
+                os.system(f"python pagodo/pagodo.py -s -d {cible} -g pagodo/dorks/vulnerable_servers.dorks")
+
+            else:
+                print("\n Erreur : la saisie est incorrecte.")
 
         input("Continuer")
 
 
-os.system("clear")
-os.system("figlet -f larry3d Toolbox")
+while True:
+    os.system("clear")
+    os.system("figlet -f larry3d Toolbox")
 
-# Afficher le menu
-print("Menu :")
-print("1. Collecte d'information.")
-print("2. Scan des vulnérabilités.")
-print("3. Google Dorks")
-print("0 . Arreter le programme.")
-choix = input("Saisir l'option : ")
+    # Afficher le menu
+    print("Menu :")
+    print("1. Collecte d'information.")
+    print("2. Scan des vulnérabilités.")
+    print("3. Google Dorks")
+    print("0. Arreter le programme.")
+    choix = input("Saisir l'option : ")
 
-if choix == "0":
-    sys.exit("Fin du programme.")
+    if choix == "0":
+        print("Fin du programme.")
+        break
 
-elif choix == "1":
-    info()
+    elif choix == "1":
+        info()
 
-elif choix == "2":
-    vuln()
+    elif choix == "2":
+        vuln()
 
-elif choix == "3":
-    dorks()
+    elif choix == "3":
+        dorks()
