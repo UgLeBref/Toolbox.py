@@ -19,39 +19,39 @@ menu = input("Base de données de vulnérabilités : ")
 
 if menu == '0':
     os.system("python main.py")
-
-ip_add = input("Saisir l'adresse ip cible : ")
-os.system("clear")
-
-if menu == '1':
-    os.system(f"nmap --script vulscan/ -script-args vulscandb=scipvuldb.csv -sV {ip_add}")
-
-elif menu == '2':
-    os.system(f"nmap --script vulscan/ -script-args vulscandb=cve.csv -sV {ip_add}")
-
-elif menu == '3':
-    os.system(f"nmap --script vulscan/ -script-args vulscandb=securityfocus.csv -sV {ip_add}")
-
-elif menu == '4':
-    os.system(f"nmap --script vulscan/ -script-args vulscandb=xforce.csv -sV {ip_add}")
-
-elif menu == '5':
-    os.system(f"nmap --script vulscan/ -script-args vulscandb=exploitdb.csv -sV {ip_add}")
-
-elif menu == '6':
-    os.system(f"nmap --script vulscan/ -script-args vulscandb=openvas.csv -sV {ip_add}")
-
-elif menu == '7':
-    os.system(f"nmap --script vulscan/ -script-args vulscandb=securitytracker.csv -sV {ip_add}")
-
-elif menu == '8':
-    os.system(f"nmap --script vulscan/ -script-args vulscandb=osvdb.csv -sV {ip_add}")
-
-elif menu == '9':
-    os.system(f"nmap --script vulscan/ -sV {ip_add}")
-
 else:
-    print("\n Erreur : la saisie est incorrecte.")
+    ip_add = input("Saisir l'adresse ip cible : ")
+    os.system("clear")
 
-input("Continuer")
-os.system("python Vuln.py")
+    if menu == '1':
+        os.system(f"nmap --script vulscan/ -script-args vulscandb=scipvuldb.csv -sV {ip_add}")
+
+    elif menu == '2':
+        os.system(f"nmap --script vulscan/ -script-args vulscandb=cve.csv -sV {ip_add}")
+
+    elif menu == '3':
+        os.system(f"nmap --script vulscan/ -script-args vulscandb=securityfocus.csv -sV {ip_add}")
+
+    elif menu == '4':
+        os.system(f"nmap --script vulscan/ -script-args vulscandb=xforce.csv -sV {ip_add}")
+
+    elif menu == '5':
+        os.system(f"nmap --script vulscan/ -script-args vulscandb=exploitdb.csv -sV {ip_add}")
+
+    elif menu == '6':
+        os.system(f"nmap --script vulscan/ -script-args vulscandb=openvas.csv -sV {ip_add}")
+
+    elif menu == '7':
+        os.system(f"nmap --script vulscan/ -script-args vulscandb=securitytracker.csv -sV {ip_add}")
+
+    elif menu == '8':
+        os.system(f"nmap --script vulscan/ -script-args vulscandb=osvdb.csv -sV {ip_add}")
+
+    elif menu == '9':
+        os.system(f"nmap --script vulscan/ -sV {ip_add}")
+
+    else:
+        print("\n Erreur : la saisie est incorrecte.")
+
+    input("Continuer")
+    os.system("python Vuln.py")
