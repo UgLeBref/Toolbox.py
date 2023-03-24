@@ -1,6 +1,7 @@
 import os
 
 os.system("clear")
+os.system("figlet -f larry3d Info")
 
 print("1. Détection des hôtes.")
 print("2. Scan des ports d'un hôte.")

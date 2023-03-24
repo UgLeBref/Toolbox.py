@@ -1,6 +1,7 @@
 import os
 
 os.system("clear")
+os.system("figlet -f Toolbox")
 
 # Afficher le menu
 print("Menu :")
@@ -15,13 +16,13 @@ if choix == "1":
     os.system("python3 Info.py")
 
 if choix == "2":
-    ip_add = input("Saisir l'adresse ip cible : ")
-    os.system(f"nmap -sV --script=vulscan/ {ip_add}")
+    os.system("python Vuln.py")
 
 elif choix == "5":
     print("Fin du programme.")
+    exit()
 
 else:
-    print("Choix invalide")
+    os.system("python main.py")
 
 input("Continuer")
