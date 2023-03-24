@@ -3,6 +3,7 @@ import os
 os.system("clear")
 os.system("figlet -f larry3d Info")
 
+print("Menu :")
 print("1. Détection des hôtes.")
 print("2. Scan des ports d'un hôte.")
 print("3. Scan complet d'un hôte.")
@@ -31,3 +32,5 @@ elif menu == '0':
 
 else:
     print("\n Erreur : la saisie est incorrecte.")
+
+input("Continuer")

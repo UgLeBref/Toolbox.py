@@ -3,6 +3,7 @@ import os
 os.system("clear")
 os.system("figlet -f larry3d Databases")
 
+print("Menu :")
 print("1. Scipvul db.")
 print("2. CVE.")
 print("3. Security Focus.")
@@ -50,3 +51,5 @@ elif menu == '0':
 
 else:
     print("\n Erreur : la saisie est incorrecte.")
+
+input("Continuer")
