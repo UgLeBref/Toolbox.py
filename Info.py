@@ -34,3 +34,4 @@ else:
     print("\n Erreur : la saisie est incorrecte.")
 
 input("Continuer")
+os.system("python3 Info.py")

@@ -15,6 +15,10 @@ print("8. MàJ des Google Dorks.")
 print("0. Menu principal.")
 
 menu = input("Collecte d'information : ")
+
+if menu == '0':
+    os.system("python main.py")
+
 cible = input("Quel est le domaine cible : ")
 
 if menu == '1':
@@ -48,9 +52,6 @@ elif menu == '7':
 elif menu == '8':
     os.system("clear")
     os.system("python pagodo/ghdb_scrapper.py -s -j -i")
-
-elif menu == '0':
-    os.system("python main.py")
 
 else:
     print("\n Erreur : la saisie est incorrecte.")

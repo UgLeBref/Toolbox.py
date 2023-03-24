@@ -1,4 +1,4 @@
-import os
+import os, sys
 
 os.system("clear")
 os.system("figlet -f larry3d Toolbox")
@@ -23,7 +23,7 @@ if choix == "3":
 
 elif choix == "0":
     print("Fin du programme.")
-    exit()
+    sys.exit()
 
 else:
     os.system("python main.py")

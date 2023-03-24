@@ -16,6 +16,10 @@ print("9. Rechercher dans toutes les bases.")
 print("0. Menu principal.")
 
 menu = input("Base de données de vulnérabilités : ")
+
+if menu == '0':
+    os.system("python main.py")
+
 ip_add = input("Saisir l'adresse ip cible : ")
 os.system("clear")
 
@@ -46,10 +50,8 @@ elif menu == '8':
 elif menu == '9':
     os.system(f"nmap --script vulscan/ -sV {ip_add}")
 
-elif menu == '0':
-    os.system("python main.py")
-
 else:
     print("\n Erreur : la saisie est incorrecte.")
 
 input("Continuer")
+os.system("python Vuln.py")
