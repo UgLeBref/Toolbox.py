@@ -242,5 +242,5 @@ while True:
     elif choix == "4":
         dns()
 
-    elif choix == "4":
+    elif choix == "5":
         shodan()
