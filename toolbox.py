@@ -160,12 +160,55 @@ def dorks():
         input("Continuer")
 
 
-def dnscan():
+def dns():
     while True:
         os.system("clear")
-        print("(Saisir 0 pour revenir au menu.)")
-        menu = input("Quel domaine scanner : ")
-        os.system(f"python dnscan/dnscan.py -d {menu}")
+        os.system("figlet -f larry3d Recherche de domaine.")
+        print("Menu :")
+        print("1. DNScan.")
+        print("2. Domain Hunter.")
+        print("0. Menu principal.")
+        menu = input("Recherche de domaine : ")
+
+        if menu == '0':
+            break
+        elif menu == '1':
+            dns_cible = input("Quel est le domaine cible ? :")
+            os.system(f"python dnscan/dnscan.py -d {dns_cible}")
+        elif menu == '2':
+            dns_cible = input("Quel est le domaine cible ? :")
+            os.system(f"python domainhunter/domainhunter.py -s {dns_cible}")
+        input("Continuer")
+
+
+def shodan():
+    while True:
+        os.system("clear")
+        os.system("figlet -f larry3d Shodan.")
+        print("\nMon ip sur internet : ", end=" ")
+        os.system("shodan myip")
+        print("\nMenu :")
+        print("1. Compter les résultat.")
+        print("2. Enregistrer dans un fichier.")
+        print("3. Information disponibles sur une IP.")
+        print("4. Vue rapide : IP/Ports/Org/Hostname.")
+        print("0. Menu principal.")
+        menu = input("Shodan : ")
+
+        if menu == '0':
+            break
+        elif menu == '1':
+            name = input("Quel est la recherche ? :")
+            os.system(f"shodan count {name}")
+        elif menu == '2':
+            name = input("Quel est la recherche ? :")
+            os.system(f"shodan download recherche_{name} {name}")
+        elif menu == '3':
+            ip = input("Quel est l'ip cible' ? :")
+            os.system(f"shodan host {ip}")
+        elif menu == '4':
+            name = input("Quel est la recherche ? :")
+            os.system(f"shodan search --fields ip_str,port,org,hostnames {name}")
         input("Continuer")
 
 
@@ -177,8 +220,9 @@ while True:
     print("Menu :")
     print("1. Collecte d'information.")
     print("2. Scan des vulnérabilités.")
-    print("3. Google Dorks")
-    print("4. Scan DNS")
+    print("3. Google Dorks.")
+    print("4. Recherche de domaine.")
+    print("5. Shodan.")
     print("0. Arreter le programme.")
     choix = input("Saisir l'option : ")
 
@@ -196,4 +240,7 @@ while True:
         dorks()
 
     elif choix == "4":
-        dnscan()
+        dns()
+
+    elif choix == "4":
+        shodan()
